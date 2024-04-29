@@ -1,0 +1,27 @@
+.main {
+    position: relative;
+    height: 600px;
+    color: white;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 4rem 12rem;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.text {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
