@@ -5,4 +5,5 @@ import dynamic from "next/dynamic";
 export const components = {
   hero_background_image: dynamic(() => import("./HeroBackgroundImage")),
   navigation_item: dynamic(() => import("./NavigationItem")),
+  text_image_block: dynamic(() => import("./TextImageBlock")),
 };

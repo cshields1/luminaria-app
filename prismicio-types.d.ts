@@ -66,7 +66,9 @@ interface EventDocumentData {
 export type EventDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<EventDocumentData>, "event", Lang>;
 
-type HomepageDocumentDataSlicesSlice = HeroBackgroundImageSlice;
+type HomepageDocumentDataSlicesSlice =
+  | TextImageBlockSlice
+  | HeroBackgroundImageSlice;
 
 /**
  * Content for Homepage documents
@@ -165,7 +167,9 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroBackgroundImageSlice;
+type PageDocumentDataSlicesSlice =
+  | TextImageBlockSlice
+  | HeroBackgroundImageSlice;
 
 /**
  * Content for Page documents
@@ -373,6 +377,101 @@ export type NavigationItemSlice = prismic.SharedSlice<
   NavigationItemSliceVariation
 >;
 
+/**
+ * Primary content in *TextImageBlock → Primary*
+ */
+export interface TextImageBlockSliceDefaultPrimary {
+  /**
+   * Copy field in *TextImageBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_image_block.primary.copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  copy: prismic.RichTextField;
+
+  /**
+   * Image field in *TextImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Text-Image variation for TextImageBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImageBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextImageBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *TextImageBlock → Primary*
+ */
+export interface TextImageBlockSliceImageTextPrimary {
+  /**
+   * Image field in *TextImageBlock → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_image_block.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Copy field in *TextImageBlock → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_image_block.primary.copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  copy: prismic.RichTextField;
+}
+
+/**
+ * Image-Text variation for TextImageBlock Slice
+ *
+ * - **API ID**: `imageText`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImageBlockSliceImageText = prismic.SharedSliceVariation<
+  "imageText",
+  Simplify<TextImageBlockSliceImageTextPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextImageBlock*
+ */
+type TextImageBlockSliceVariation =
+  | TextImageBlockSliceDefault
+  | TextImageBlockSliceImageText;
+
+/**
+ * TextImageBlock Shared Slice
+ *
+ * - **API ID**: `text_image_block`
+ * - **Description**: TextImageBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextImageBlockSlice = prismic.SharedSlice<
+  "text_image_block",
+  TextImageBlockSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -403,6 +502,12 @@ declare module "@prismicio/client" {
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      TextImageBlockSlice,
+      TextImageBlockSliceDefaultPrimary,
+      TextImageBlockSliceImageTextPrimary,
+      TextImageBlockSliceVariation,
+      TextImageBlockSliceDefault,
+      TextImageBlockSliceImageText,
     };
   }
 }
