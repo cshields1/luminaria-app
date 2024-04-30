@@ -1,0 +1,25 @@
+@import '@/app/variables.scss';
+
+.main {
+    padding: 2rem 4rem;
+}
+
+.content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .main {
+        padding: 0;
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

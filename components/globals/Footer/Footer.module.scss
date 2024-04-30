@@ -1,0 +1,23 @@
+@import '@/app/variables.scss';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 8rem;
+
+    @media (max-width: 576px) {
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+}
+
+.name {
+    font-size: 3rem;
+    margin: 1.5rem auto;
+}
+
+.copyright {
+    margin: 1rem auto;
+}

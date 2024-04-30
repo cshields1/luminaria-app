@@ -1,6 +1,9 @@
 import { Lora } from "next/font/google"
 import { PrismicPreview } from '@prismicio/next'
-import { repositoryName, respositoryName } from '@/prismicio'
+import { repositoryName } from '@/prismicio'
+
+import Header from '@/components/globals/Header/Header'
+import Footer from '@/components/globals/Footer/Footer'
 
 import "./globals.scss"
 
@@ -15,7 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={bodyFont.className}>
+        <Header />
+
         {children}
+
+        <Footer />
 
         <PrismicPreview respositoryName={repositoryName} />
       </body>

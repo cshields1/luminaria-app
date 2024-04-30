@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+}
+
+.logo {
+    width: 350px;
+    height: auto;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: .22em;
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 100vw;
+    }
+}
