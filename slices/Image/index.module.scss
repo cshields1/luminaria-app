@@ -1,0 +1,16 @@
+@import '@/app/variables.scss';
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 6.75%;
+    box-shadow: $imageBoxShadow;
+    margin: 0 auto;
+}

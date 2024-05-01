@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis amet nulla elit. In ipsum nostrud nisi. Dolore incididunt nulla velit est sint incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

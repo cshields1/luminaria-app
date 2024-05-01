@@ -1,0 +1,28 @@
+@import '@/app/variables.scss';
+
+.main {
+    padding: $contentPadding;
+
+    article {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1, h2, h3, h4, h5, h6, img {
+        text-align: center;
+        margin: 1em auto;
+    }
+
+    h1 {
+        font-size: clamp(3rem, 5.2vw, 3.6rem);
+    }
+
+    h2 {
+        font-size: clamp(2rem, 3.6vw, 2.4rem);
+    }
+
+    p {
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        line-height: 1.5;
+    }
+}
