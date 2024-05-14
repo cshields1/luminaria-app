@@ -24,6 +24,7 @@ export default function HeroBackgroundImage({ slice: { slice_type, variation, pr
           alt={alt}
           width={width}
           height={height}
+          sizes="100vw"
           className={s.background}
           priority
         />

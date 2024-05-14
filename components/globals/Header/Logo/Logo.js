@@ -13,6 +13,7 @@ export default function Logo() {
                     src={logo}
                     alt='Luminaria Choir logo'
                     className={s.logo}
+                    priority
                 />
             </Link>
 
