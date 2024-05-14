@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
       <body className={bodyFont.className}>
         <Header />
 
-        {children}
+        <main>
+          {children}
+        </main>
 
         <Footer />
 
