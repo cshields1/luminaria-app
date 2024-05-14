@@ -5,14 +5,17 @@
  */
 
 import { PrismicRichText } from '@prismicio/react'
+import parse from 'html-react-parser'
 
 import s from './index.module.scss'
 
-export default function TextBlock({ slice: { slice_type, variation, primary: { copy } } }) {
+export default function TextBlock({ slice: { slice_type, variation, primary: { copy = [], html = '' } } }) {
   return (
     <section data-slice-type={slice_type} data-slice-variation={variation} className={s.main}>
       <article>
-        <PrismicRichText field={copy} />
+        {copy.length > 0 && <PrismicRichText field={copy} />}
+
+        {html && parse(html)}
       </article>
     </section>
   )

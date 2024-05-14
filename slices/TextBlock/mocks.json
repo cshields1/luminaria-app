@@ -9,10 +9,15 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Quis amet nulla elit. In ipsum nostrud nisi. Dolore incididunt nulla velit est sint incididunt."
+							"text": "Eiusmod cupidatat cupidatat pariatur do ad ad magna sunt quis consequat esse nostrud minim amet excepteur. Nostrud cupidatat sint ad deserunt sunt aliquip dolore tempor laboris aute proident ea esse cupidatat. Qui cillum nisi deserunt cupidatat magna."
 						}
 					}
 				]
+			},
+			"html": {
+				"__TYPE__": "FieldContent",
+				"value": "exercise",
+				"type": "Text"
 			}
 		},
 		"items": []

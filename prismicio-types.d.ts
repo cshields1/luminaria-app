@@ -458,6 +458,16 @@ export interface TextBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   copy: prismic.RichTextField;
+
+  /**
+   * HTML field in *TextBlock → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block.primary.html
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  html: prismic.KeyTextField;
 }
 
 /**
