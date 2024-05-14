@@ -32,7 +32,18 @@ interface EventDocumentData {
   name: prismic.KeyTextField;
 
   /**
-   * Description field in *Event*
+   * Short Description field in *Event*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.shortDescription
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  shortDescription: prismic.KeyTextField;
+
+  /**
+   * Long Description field in *Event*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -52,6 +63,17 @@ interface EventDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#timestamp
    */
   dateAndTime: prismic.TimestampField;
+
+  /**
+   * Image field in *Event*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
